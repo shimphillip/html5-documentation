@@ -1,15 +1,5 @@
 import { NextPage } from 'next';
-import Layout from '../components/Layout';
 
-const Home: NextPage<{ userAgent: string }> = ({ userAgent }) => (
-  <Layout title="homepage">
-    <h1>Hello world! - user agent: {userAgent}</h1>
-  </Layout>
-);
-
-Home.getInitialProps = async ({ req }) => {
-  const userAgent = req ? req.headers['user-agent'] || '' : navigator.userAgent;
-  return { userAgent };
-};
+const Home: NextPage = () => <h1>Next page</h1>;
 
 export default Home;
