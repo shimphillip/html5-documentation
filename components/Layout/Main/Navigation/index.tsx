@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { withRouter } from 'next/router';
 import MediaQuery from 'react-responsive';
-import { colors } from '../../../styles/theme';
+import { colors, deviceWidths } from '../../../styles/theme';
+
+const { phone, tablet } = deviceWidths;
 
 const Navigation = withRouter((props) => {
   const [openMenu, setOpenMenu] = useState(false);
@@ -87,13 +89,13 @@ const Navigation = withRouter((props) => {
             margin: 0 5vw 40px 0;
           }
 
-          @media only screen and (max-width: 768px) {
+          @media only screen and (max-width: ${tablet}) {
             nav {
               margin: 0 3vw 40px 0;
             }
           }
 
-          @media only screen and (max-width: 414px) {
+          @media only screen and (max-width: ${phone}) {
             nav {
               margin: 0;
               text-align: center;

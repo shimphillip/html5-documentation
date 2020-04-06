@@ -1,5 +1,7 @@
 import Link from 'next/link';
-import { colors } from '../../styles/theme';
+import { colors, deviceWidths } from '../../styles/theme';
+
+const { phone } = deviceWidths;
 
 const Header: React.FC = (): JSX.Element => {
   return (
@@ -20,7 +22,7 @@ const Header: React.FC = (): JSX.Element => {
           background: ${colors.mainBackground};
         }
 
-        @media only screen and (max-width: 414px) {
+        @media only screen and (max-width: ${phone}) {
           header {
             flex-direction: column;
             margin: 0;
@@ -33,7 +35,7 @@ const Header: React.FC = (): JSX.Element => {
           cursor: pointer;
         }
 
-        @media only screen and (max-width: 414px) {
+        @media only screen and (max-width: ${phone}) {
           img {
             height: 100px;
           }

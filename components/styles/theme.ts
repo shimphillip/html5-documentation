@@ -6,4 +6,10 @@ const colors = {
   secondary: '#333',
 };
 
-export { colors };
+const deviceWidths = {
+  phone: '414px',
+  tablet: '768px',
+  desktop: '1024px',
+};
+
+export { colors, deviceWidths };
