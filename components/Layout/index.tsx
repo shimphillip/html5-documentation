@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Header from './Header';
 import globalStyles from '../styles/globalStyles';
+import Main from './Main';
 
 interface MyProps {
   children: React.ReactNode;
@@ -15,7 +16,7 @@ const Layout: React.FC<MyProps> = ({ children }) => {
         <meta charSet="utf-8" />
       </Head>
       <Header></Header>
-      <div className="container">{children}</div>
+      <Main>{children}</Main>
       <style jsx global>
         {globalStyles}
       </style>
