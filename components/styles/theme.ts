@@ -6,4 +6,4 @@ const colors = {
   secondary: '#333',
 };
 
-export default colors;
+export { colors };

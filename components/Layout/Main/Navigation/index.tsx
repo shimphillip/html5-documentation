@@ -1,27 +1,27 @@
-import React, { useState } from "react";
-import Link from "next/link";
-import { withRouter } from "next/router";
-import MediaQuery from "react-responsive";
-import colors from "../../../styles/theme";
+import React, { useState } from 'react';
+import Link from 'next/link';
+import { withRouter } from 'next/router';
+import MediaQuery from 'react-responsive';
+import { colors } from '../../../styles/theme';
 
-const Navigation = withRouter(props => {
+const Navigation = withRouter((props) => {
   const [openMenu, setOpenMenu] = useState(false);
   const currentPath = props.router.pathname.slice(1);
   const menus = [
-    "introduction",
-    "article",
-    "aside",
-    "details",
-    "figcaption",
-    "figure",
-    "footer",
-    "header",
-    "main",
-    "mark",
-    "nav",
-    "section",
-    "summary",
-    "time"
+    'introduction',
+    'article',
+    'aside',
+    'details',
+    'figcaption',
+    'figure',
+    'footer',
+    'header',
+    'main',
+    'mark',
+    'nav',
+    'section',
+    'summary',
+    'time',
   ];
 
   const handleToggle = () => {
@@ -36,20 +36,20 @@ const Navigation = withRouter(props => {
             <a>Menu Toggle</a>
           </li>
           {openMenu &&
-            menus.map(menu => {
+            menus.map((menu) => {
               return (
                 <li
                   key={menu}
                   onClick={handleToggle}
                   className={
                     currentPath === menu
-                      ? "active"
-                      : "" || (menu === "introduction" && !currentPath.length)
-                      ? "active"
-                      : ""
+                      ? 'active'
+                      : '' || (menu === 'introduction' && !currentPath.length)
+                      ? 'active'
+                      : ''
                   }
                 >
-                  <Link href={menu === "introduction" ? "/" : `/${menu}`}>
+                  <Link href={menu === 'introduction' ? '/' : `/${menu}`}>
                     <a>{menu.toUpperCase()}</a>
                   </Link>
                 </li>
@@ -57,19 +57,19 @@ const Navigation = withRouter(props => {
             })}
         </MediaQuery>
         <MediaQuery minWidth={415}>
-          {menus.map(menu => {
+          {menus.map((menu) => {
             return (
               <li
                 key={menu}
                 className={
                   currentPath === menu
-                    ? "active"
-                    : "" || (menu === "introduction" && !currentPath.length)
-                    ? "active"
-                    : ""
+                    ? 'active'
+                    : '' || (menu === 'introduction' && !currentPath.length)
+                    ? 'active'
+                    : ''
                 }
               >
-                <Link href={menu === "introduction" ? "/" : `/${menu}`}>
+                <Link href={menu === 'introduction' ? '/' : `/${menu}`}>
                   <a>{menu.toUpperCase()}</a>
                 </Link>
               </li>

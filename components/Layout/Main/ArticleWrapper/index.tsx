@@ -1,7 +1,7 @@
-import colors from "../../../styles/theme";
+import { colors } from '../../../styles/theme';
 
 interface ArticleProps {
-    children: React.ReactNode
+  children: React.ReactNode;
 }
 
 const ArticleWrapper: React.FC<ArticleProps> = ({ children }) => {

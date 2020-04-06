@@ -1,6 +1,6 @@
 // styles/global.js
 import css from 'styled-jsx/css';
-import colors from './theme';
+import { colors } from './theme';
 
 export default css.global`
   @import url('https://fonts.googleapis.com/css?family=Quicksand:400,700');

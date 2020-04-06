@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import colors from '../../styles/theme';
+import { colors } from '../../styles/theme';
 
 const Header: React.FC = (): JSX.Element => {
   return (
