@@ -1,17 +1,21 @@
+import Head from 'next/head';
 import { NextPage } from 'next';
-import Highlight from "react-highlight";
+import Highlight from 'react-highlight';
 
 const aside: NextPage = () => {
   return (
     <>
+      <Head>
+        <title>Aside</title>
+      </Head>
       <h2>Aside</h2>
       <p>
-        The <span className="primary-color">{"<aside>"}</span> defines some
+        The <span className="primary-color">{'<aside>'}</span> defines some
         content aside from the content it is placed in (like a sidebar)
       </p>
 
       <p>
-        The <span className="primary-color">{"<aside>"}</span> content should be
+        The <span className="primary-color">{'<aside>'}</span> content should be
         related to the surrounding content.
       </p>
       <h3>Example</h3>

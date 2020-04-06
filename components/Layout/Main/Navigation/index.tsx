@@ -8,7 +8,7 @@ const { phone, tablet } = deviceWidths;
 
 const Navigation = withRouter((props) => {
   const [openMenu, setOpenMenu] = useState(false);
-  const currentPath = props.router.pathname.slice(1);
+  const currentPath: string = props.router.pathname.slice(1);
   const menus = [
     'introduction',
     'article',
@@ -30,6 +30,20 @@ const Navigation = withRouter((props) => {
     setOpenMenu(!openMenu);
   };
 
+  const activateMenu = (menu: string, currentPath: string): string => {
+    // handle introduction menu
+    if (menu === 'introduction' && currentPath === '') {
+      return 'active';
+    }
+    if (currentPath === menu) {
+      return 'active';
+    }
+    return '';
+  };
+
+  const handleRoutes = (menu: string): string =>
+    menu === 'introduction' ? '/' : `/${menu}`;
+
   return (
     <nav>
       <ul>
@@ -43,15 +57,9 @@ const Navigation = withRouter((props) => {
                 <li
                   key={menu}
                   onClick={handleToggle}
-                  className={
-                    currentPath === menu
-                      ? 'active'
-                      : '' || (menu === 'introduction' && !currentPath.length)
-                      ? 'active'
-                      : ''
-                  }
+                  className={activateMenu(menu, currentPath)}
                 >
-                  <Link href={menu === 'introduction' ? '/' : `/${menu}`}>
+                  <Link href={handleRoutes(menu)}>
                     <a>{menu.toUpperCase()}</a>
                   </Link>
                 </li>
@@ -59,24 +67,13 @@ const Navigation = withRouter((props) => {
             })}
         </MediaQuery>
         <MediaQuery minWidth={415}>
-          {menus.map((menu) => {
-            return (
-              <li
-                key={menu}
-                className={
-                  currentPath === menu
-                    ? 'active'
-                    : '' || (menu === 'introduction' && !currentPath.length)
-                    ? 'active'
-                    : ''
-                }
-              >
-                <Link href={menu === 'introduction' ? '/' : `/${menu}`}>
-                  <a>{menu.toUpperCase()}</a>
-                </Link>
-              </li>
-            );
-          })}
+          {menus.map((menu) => (
+            <li key={menu} className={activateMenu(menu, currentPath)}>
+              <Link href={handleRoutes(menu)}>
+                <a>{menu.toUpperCase()}</a>
+              </Link>
+            </li>
+          ))}
         </MediaQuery>
       </ul>
       <style jsx>

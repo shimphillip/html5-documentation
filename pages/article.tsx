@@ -1,12 +1,16 @@
+import Head from 'next/head';
 import { NextPage } from 'next';
-import Highlight from "react-highlight";
+import Highlight from 'react-highlight';
 
 const article: NextPage = () => {
   return (
     <>
+      <Head>
+        <title>Article</title>
+      </Head>
       <h2>Article</h2>
       <p>
-        The <span className="primary-color">{"<article>"}</span> element
+        The <span className="primary-color">{'<article>'}</span> element
         specifies independent, self-contained content.
       </p>
       <p>
@@ -14,8 +18,8 @@ const article: NextPage = () => {
         read it independently from the rest of the web site.
       </p>
       <p>
-        Examples of where an{" "}
-        <span className="primary-color">{"<article>"}</span> element can be
+        Examples of where an{' '}
+        <span className="primary-color">{'<article>'}</span> element can be
         used:
       </p>
       <ol>
