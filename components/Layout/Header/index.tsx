@@ -7,7 +7,7 @@ const Header: React.FC = (): JSX.Element => {
   return (
     <header>
       <Link href="/">
-        <img src="/static/logo.svg" alt="html5 logo" />
+        <img src="/logo.svg" alt="html5 logo" />
       </Link>
       <h1>
         HTML5 <span>Semantic</span> Elements
