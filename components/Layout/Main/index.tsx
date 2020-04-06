@@ -1,3 +1,4 @@
+import Navigation from './Navigation';
 import ArticleWrapper from './ArticleWrapper';
 
 interface MainProps {
@@ -6,9 +7,38 @@ interface MainProps {
 
 const Main: React.FC<MainProps> = ({ children }) => {
   return (
-    <div>
+    <main>
+      <Navigation />
       <ArticleWrapper>{children}</ArticleWrapper>
-    </div>
+      <style jsx>
+        {`
+          main {
+            display: flex;
+            justify-content: center;
+            margin: 0 auto;
+            width: 65vw;
+          }
+
+          @media only screen and (max-width: 1024px) {
+            main {
+              width: 90vw;
+            }
+          }
+
+          @media only screen and (max-width: 768px) {
+            main {
+              width: 100vw;
+            }
+          }
+
+          @media only screen and (max-width: 414px) {
+            main {
+              flex-direction: column;
+            }
+          }
+        `}
+      </style>
+    </main>
   );
 };
 
