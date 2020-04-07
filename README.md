@@ -4,7 +4,7 @@ Good looking documentation page for HTML5.
 
 ## Screenshots
 
-<img src="https://github.com/shimphillip/html5-documentation/blob/master/html5-documentation.gif" />
+<img src="./html5-documentation.gif" />
 
 ## User stories
 
@@ -12,10 +12,6 @@ Good looking documentation page for HTML5.
 2. The navbar shows currently selected page.
 3. Code highlighting.
 4. Responsive.
-
-### Todo list
-
-1. Improve performance
 
 ## Tech stack
 
@@ -26,8 +22,8 @@ Good looking documentation page for HTML5.
 
 ## Lessons I learned
 
-- Next.js is server rendered, you don't have to spin up a server though :p
 - Because it's server rendered, initial pageload is faster but navigating to different pages surely does take longer because of network requests.
+- Next.js supports static site building now. As long as components don't fetch initial props through api requests, nextjs intelligently converts the app into static site when building and bundling the app 💪
 - Next.js supports same file stlye changes with <style jsx> tags, very convenient.
 - Good SEO
 
@@ -35,7 +31,8 @@ Good looking documentation page for HTML5.
 
 - W3Schools for documentation texts.
 - Amazing official docs by Zeit team.
-- PrismJS
+- react-highlight (kind of wish they had smaller bundle sizes though)
+- zeit now for CD
 
 ## Running a local copy of the app
 
