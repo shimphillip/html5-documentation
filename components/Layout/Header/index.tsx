@@ -33,6 +33,8 @@ const Header: React.FC = (): JSX.Element => {
 
         img {
           cursor: pointer;
+          height: 150px;
+          width: 150px;
         }
 
         @media only screen and (max-width: ${phone}) {

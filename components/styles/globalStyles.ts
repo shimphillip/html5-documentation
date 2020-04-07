@@ -12,6 +12,7 @@ export default css.global`
   }
 
   body {
+    position: relative;
     background: ${colors.secondaryBackground};
     font-family: 'Quicksand', sans-serif;
     color: ${colors.secondary};
@@ -40,7 +41,6 @@ export default css.global`
     margin-bottom: 2rem;
     font-size: 4rem;
     color: ${colors.darkPrimary};
-    // text-transform: uppercase;
     border-bottom: 3px solid ${colors.primary};
   }
 

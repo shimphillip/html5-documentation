@@ -13,6 +13,12 @@ const Footer: React.FC = (): JSX.Element => {
             width: 100%;
             text-align: center;
             margin-top: 1rem;
+            position: absolute;
+            bottom: 0;
+          }
+
+          p {
+              margin-bottom: 0;
           }
 
           a {
