@@ -1,18 +1,13 @@
 import Head from 'next/head';
 import { NextPage } from 'next';
-import { useRouter } from 'next/router';
-import { capitalize } from '../utils';
 
 const Home: NextPage = () => {
-  const { pathname } = useRouter();
-  const name = capitalize(pathname.slice(1));
-
   return (
     <>
       <Head>
-        <title>{name}</title>
+        <title>Introduction</title>
       </Head>
-      <h2>{name}</h2>
+      <h2>Introduction</h2>
       <h3>What are Semantic Elements?</h3>
       <p>
         A semantic element clearly describes its meanings to both the browser
