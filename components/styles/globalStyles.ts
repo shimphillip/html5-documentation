@@ -40,7 +40,7 @@ export default css.global`
     margin-bottom: 2rem;
     font-size: 4rem;
     color: ${colors.darkPrimary};
-    text-transform: uppercase;
+    // text-transform: uppercase;
     border-bottom: 3px solid ${colors.primary};
   }
 

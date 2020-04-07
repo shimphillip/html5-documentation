@@ -1,12 +1,21 @@
+import Head from 'next/head';
 import { NextPage } from 'next';
-import Highlight from "react-highlight";
+import Highlight from 'react-highlight';
+import { useRouter } from 'next/router';
+import { capitalize } from '../utils';
 
 const section: NextPage = () => {
+  const { pathname } = useRouter();
+  const name = capitalize(pathname.slice(1));
+
   return (
     <>
-      <h2>Section</h2>
+      <Head>
+        <title>{name}</title>
+      </Head>
+      <h2>{name}</h2>
       <p>
-        The <span className="primary-color">{"<section>"}</span> tag defines
+        The <span className="primary-color">{'<section>'}</span> tag defines
         sections in a document, such as chapters, headers, footers, or any other
         sections of the document.
       </p>

@@ -1,18 +1,27 @@
+import Head from 'next/head';
 import { NextPage } from 'next';
-import Highlight from "react-highlight";
+import Highlight from 'react-highlight';
+import { useRouter } from 'next/router';
+import { capitalize } from '../utils';
 
 const nav: NextPage = () => {
+  const { pathname } = useRouter();
+  const name = capitalize(pathname.slice(1));
+
   return (
     <>
-      <h2>Nav</h2>
+      <Head>
+        <title>{name}</title>
+      </Head>
+      <h2>{name}</h2>
       <p>
-        The <span className="primary-color">{"<nav>"}</span> tag defines a set
+        The <span className="primary-color">{'<nav>'}</span> tag defines a set
         of navigation links.
       </p>
       <p>
-        Notice that NOT all links of a document should be inside a{" "}
-        <span className="primary-color">{"<nav>"}</span> element. The{" "}
-        <span className="primary-color">{"<nav>"}</span> element is intended
+        Notice that NOT all links of a document should be inside a{' '}
+        <span className="primary-color">{'<nav>'}</span> element. The{' '}
+        <span className="primary-color">{'<nav>'}</span> element is intended
         only for major block of navigation links.
       </p>
       <p>
@@ -22,7 +31,7 @@ const nav: NextPage = () => {
       </p>
       <h3>Example</h3>
       <Highlight className="html">
-      {`
+        {`
 <nav>
   <a href="/html/">HTML</a> |
   <a href="/css/">CSS</a> |
@@ -30,7 +39,7 @@ const nav: NextPage = () => {
   <a href="/jquery/">jQuery</a>
 </nav>
       `}
-    </Highlight>
+      </Highlight>
     </>
   );
 };

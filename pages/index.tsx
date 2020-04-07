@@ -1,25 +1,34 @@
+import Head from 'next/head';
 import { NextPage } from 'next';
+import { useRouter } from 'next/router';
+import { capitalize } from '../utils';
 
 const Home: NextPage = () => {
+  const { pathname } = useRouter();
+  const name = capitalize(pathname.slice(1));
+
   return (
     <>
-      <h2>Introduction</h2>
+      <Head>
+        <title>{name}</title>
+      </Head>
+      <h2>{name}</h2>
       <h3>What are Semantic Elements?</h3>
       <p>
         A semantic element clearly describes its meanings to both the browser
         and the developer.
       </p>
       <p>
-        Examples of <strong>non-semantic elements:</strong>{" "}
-        <span className="primary-color">{"<div>"}</span> and{" "}
-        <span className="primary-color">{"<span>"}</span> - Tells nothing about
+        Examples of <strong>non-semantic elements:</strong>{' '}
+        <span className="primary-color">{'<div>'}</span> and{' '}
+        <span className="primary-color">{'<span>'}</span> - Tells nothing about
         its content.
       </p>
       <p>
-        Examples of <strong>semantic</strong> elements:{" "}
-        <span className="primary-color">{"<form>"}</span>,{" "}
-        <span className="primary-color">{"<table>"}</span> and{" "}
-        <span className="primary-color">{"<article>"}</span> - Clearly defines
+        Examples of <strong>semantic</strong> elements:{' '}
+        <span className="primary-color">{'<form>'}</span>,{' '}
+        <span className="primary-color">{'<table>'}</span> and{' '}
+        <span className="primary-color">{'<article>'}</span> - Clearly defines
         its context.
       </p>
       <h3>Why Semantic Elements?</h3>
@@ -37,6 +46,6 @@ const Home: NextPage = () => {
       <p>HTML5 semantic elements are supported in all modern browsers.</p>
     </>
   );
-}
+};
 
 export default Home;

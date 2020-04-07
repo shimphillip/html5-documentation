@@ -1,14 +1,19 @@
 import Head from 'next/head';
 import { NextPage } from 'next';
 import Highlight from 'react-highlight';
+import { useRouter } from 'next/router';
+import { capitalize } from '../utils';
 
 const details: NextPage = () => {
+  const { pathname } = useRouter();
+  const name = capitalize(pathname.slice(1));
+
   return (
     <>
       <Head>
-        <title>Details</title>
+        <title>{name}</title>
       </Head>
-      <h2>Details</h2>
+      <h2>{name}</h2>
       <p>
         The <span className="primary-color">{'<details>'}</span> tag specifies
         additional details that the user can view or hide on demand.
