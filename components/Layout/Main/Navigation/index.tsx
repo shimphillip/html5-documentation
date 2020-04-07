@@ -52,19 +52,17 @@ const Navigation = withRouter((props) => {
             <a>Menu Toggle</a>
           </li>
           {openMenu &&
-            menus.map((menu) => {
-              return (
-                <li
-                  key={menu}
-                  onClick={handleToggle}
-                  className={activateMenu(menu, currentPath)}
-                >
-                  <Link href={handleRoutes(menu)}>
-                    <a>{menu.toUpperCase()}</a>
-                  </Link>
-                </li>
-              );
-            })}
+            menus.map((menu) => (
+              <li
+                key={menu}
+                onClick={handleToggle}
+                className={activateMenu(menu, currentPath)}
+              >
+                <Link href={handleRoutes(menu)}>
+                  <a>{menu.toUpperCase()}</a>
+                </Link>
+              </li>
+            ))}
         </MediaQuery>
         <MediaQuery minWidth={415}>
           {menus.map((menu) => (
@@ -113,8 +111,8 @@ const Navigation = withRouter((props) => {
             background: ${colors.darkPrimary};
           }
 
-          li:last-child {
-            border-bottom: none;
+          li:first-child {
+            border-top: 2px solid ${colors.secondary};
           }
 
           a {
@@ -122,10 +120,11 @@ const Navigation = withRouter((props) => {
             padding: 12px 30px;
             text-decoration: none;
             color: ${colors.secondary};
+            transition: 0.2s ease-in-out;
           }
 
           a:hover {
-            background: ${colors.darkPrimary};
+            transform: scale(1.1);
           }
         `}
       </style>
